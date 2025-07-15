@@ -1,0 +1,2 @@
+/Users/benjaminosante/StudioProjects/telliooChat/android/app/.cxx/Debug/3n3l6742/x86/CMakeFiles/edit_cache.dir
+/Users/benjaminosante/StudioProjects/telliooChat/android/app/.cxx/Debug/3n3l6742/x86/CMakeFiles/rebuild_cache.dir
