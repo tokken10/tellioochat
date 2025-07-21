@@ -87,3 +87,7 @@ Love the project? Keep us caffeinated (or fed!) ❤️
 </a>
 
 </div>
+
+## License. 
+
+This project is licensed under the [MIT License](./LICENSE).  
