@@ -1,0 +1,114 @@
+# Project metadata
+name: tellioo
+description: "The chat interface from the tellioo app"
+publish_to: 'none' # Not publishing to pub.dev
+version: 1.0.9+5   # (major.minor.patch+build)
+
+# Flutter & Dart environment
+environment:
+  sdk: ^3.5.4
+
+# ---------------------------
+# Main App Dependencies
+# ---------------------------
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  bloc: ^9.0.0
+  flutter_bloc: ^9.1.1
+  equatable: ^2.0.7  # For simpler value equality in models & states
+  get_it: ^7.7.0
+  dartz: ^0.10.1
+  freezed_annotation: ^2.4.1
+  
+  # Networking
+  http: ^1.2.2
+  internet_connection_checker_plus: ^2.0.0
+
+  # File Storage
+  path_provider: ^2.1.5  # To get application documents directory
+
+  # AI Integration
+  google_generative_ai: ^0.4.7 # Gemini (Google AI) SDK
+
+  # Text Rendering
+  flutter_markdown: ^0.7.6+1 # Render markdown inside chat
+  flutter_tex: ^5.1.8       # Render LaTeX math expressions (optional)
+
+  # UI/UX
+  cupertino_icons: ^1.0.8    # iOS-style icons
+  auto_size_text: ^3.0.0     # Auto-scaling text based on screen size
+  qr_flutter: ^4.1.0         # Generate QR codes
+
+  # Build-time Configuration
+  flutter_dotenv: ^5.2.1     # Load environment variables from .env files
+
+  # App Assets
+  flutter_launcher_icons: ^0.14.3 # Auto-generate app launcher icons
+  flutter_native_splash: ^2.4.5   # Auto-generate splash screens for Android/iOS
+
+# ---------------------------
+# Dev Dependencies (Only for development & testing)
+# ---------------------------
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0       # Recommended lints for cleaner code
+  build_runner: ^2.4.15       # Runs code generation (e.g., for Hive)
+  freezed: ^2.5.2
+
+# ---------------------------
+# Flutter Assets & Configuration
+# ---------------------------
+flutter:
+  uses-material-design: true
+
+  assets:
+    - .env                    # API keys & secrets (not committed)
+    - assets/images/           # All image assets
+    - assets/images/splash_light.png
+    - assets/images/splash_dark.png
+    - assets/images/logo.png
+    - assets/images/app_icon.png
+    - assets/images/logo_foreground.png  # Transparent, cropped icon
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-VariableFont_opsz,wght.ttf
+
+# ---------------------------
+# App Icon Configuration
+# ---------------------------
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_icon.png"                 # Standard app icon
+  adaptive_icon_foreground: "assets/images/logo_foreground.png" # For adaptive Android icons
+  adaptive_icon_background: "#ffffff"                      # Icon background color
+  android_themed_icon: false                               # No dynamic theming for Android 13+
+  android_app_name: "tellioo"
+  ios_app_name: "tellioo"
+
+# ---------------------------
+# Splash Screen Configuration
+# ---------------------------
+flutter_native_splash:
+  android: true
+  ios: true
+
+  background_image: assets/images/splash_light.png          # Default splash background (light)
+  background_image_dark: assets/images/splash_dark.png      # Dark mode splash background
+
+  image: assets/images/logo.png                             # Centered logo
+  image_android: assets/images/logo.png
+  image_ios: assets/images/logo.png
+
+  ios_content_mode: center                                  # Center the splash image
+  android_gravity: center
+  fullscreen: true                                          # Remove status bar on splash
+
+  color: "#ffffff"                                          # Splash screen background color (light)
+  color_dark: "#000000"                                     # Splash screen background color (dark)
